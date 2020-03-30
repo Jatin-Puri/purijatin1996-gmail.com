@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.techno.crm.model.Customer;
 import com.niit.techno.crm.service.CustomerService;
@@ -49,7 +50,13 @@ public class CutomerController {
 	return "list-customers";
 	}
 
-
+public String showFormForUpdate(@RequestParam("customerid") int theId, ModelMap theModel)
+{
+	Customer theCustomer =  customerService.getCustomer(theId);
+	theModel.addAttribute("customer",theCustomer);
+	return "customer-form";
+	
+}
 	
 	
 }

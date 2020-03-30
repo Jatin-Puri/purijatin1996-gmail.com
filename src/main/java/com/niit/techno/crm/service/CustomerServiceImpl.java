@@ -1,7 +1,7 @@
 package com.niit.techno.crm.service;
 import com.niit.techno.crm.dao.CustomerDAO;
 
-import java.util.List;
+import java.util.*;
 
 import javax.transaction.Transactional;
 
@@ -29,6 +29,12 @@ public class CustomerServiceImpl implements CustomerService {
 
 		customerDAO.saveCustomer(theCustomer);
 
+	}
+	//@Override
+	@Transactional
+	public Customer getCustomer(int theId)
+	{
+		return customerDAO.getCustomer(theId);
 	}
 
 }
