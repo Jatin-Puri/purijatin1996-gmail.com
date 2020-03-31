@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Spring MVC 5 - form handling | Java Guides</title>
-<link href="<c:url value="/resources/css/bootstrap.min.css" />"
+<link href="<c:url value="/resources/style/bootstrap.min.css" />"
 	rel="stylesheet">
 	<link href="<c:url value="/resources/style/style1.css" />"
  rel="stylesheet">
