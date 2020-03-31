@@ -50,7 +50,8 @@ public class CutomerController {
 	return "list-customers";
 	}
 
-public String showFormForUpdate(@RequestParam("customerid") int theId, ModelMap theModel)
+	@GetMapping("/updateForm")
+public String showFormForUpdate(@RequestParam("customerId") int theId, ModelMap theModel)
 {
 	Customer theCustomer =  customerService.getCustomer(theId);
 	theModel.addAttribute("customer",theCustomer);
@@ -58,5 +59,11 @@ public String showFormForUpdate(@RequestParam("customerid") int theId, ModelMap 
 	
 }
 	
+	@GetMapping("/delete")
+	public String deleteCustomer(@RequestParam("customerId") int theId)
+	{
+		customerService.deleteCustomer(theId);
+		return "redirect:/customer/list";
+	}
 	
 }
